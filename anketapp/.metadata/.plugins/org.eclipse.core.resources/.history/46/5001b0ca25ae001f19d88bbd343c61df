@@ -1,0 +1,10 @@
+package com.example.anketv2.entities.abstracts;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.MappedSuperclass;
+
+@Entity
+public abstract class Soru {
+	private String Sorumetni;
+
+}

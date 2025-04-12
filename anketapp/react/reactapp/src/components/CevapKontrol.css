@@ -1,0 +1,31 @@
+:root {
+    --color-blue: #3498db;
+    --color-green: #2ecc71;
+    --color-orange: #e67e22;
+    --color-red: #e74c3c;
+    --color-yellow: #f1c40f;
+    --color-purple: #9b59b6;
+    --color-light-gray: #ecf0f1;
+    --color-dark-gray: #34495e;
+    --color-white: #ffffff;
+    --color-button-sidebar: #6C757D;
+}
+
+/* Örnek kullanım */
+body {
+    background-color: var(--color-light-gray);
+    color: var(--color-dark-gray);
+}
+
+h1 {
+    color: var(--color-blue);
+}
+
+.button {
+    background-color: var(--color-orange);
+    color: var(--color-white);
+}
+
+.button:hover {
+    background-color: var(--color-green);
+}

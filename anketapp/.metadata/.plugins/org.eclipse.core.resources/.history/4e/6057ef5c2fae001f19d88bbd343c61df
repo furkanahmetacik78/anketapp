@@ -1,0 +1,30 @@
+package com.example.anketv2.entities.concretes;
+
+import jakarta.persistence.*;
+
+import java.util.HashSet;
+import java.util.Set;
+
+@Entity
+@Table(name = "anket")
+public class Anket {
+    
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "anket_seq")
+    @SequenceGenerator(name = "anket_seq", sequenceName = "anket_id_seq", allocationSize = 1)
+    private Integer id;
+
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "anket_id")
+    private Set<BooleanSoru> booleanSorular = new HashSet<>();
+
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "anket_id")
+    private Set<ÇoktanSeçmeliSoru> coktanSecmeliSorular = new HashSet<>();
+
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "anket_id")
+    private Set<YazmaliSoru> yazmaliSorular = new HashSet<>();
+
+    // Getter ve Setter'lar
+}

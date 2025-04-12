@@ -1,0 +1,48 @@
+package com.example.anketv2.entities.concretes;
+
+import com.example.anketv2.entities.abstracts.Soru;
+import jakarta.persistence.*;
+import java.util.List;
+
+@Entity
+@Table(name = "anket")
+public class Anket {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
+    private Integer id;
+
+    @OneToMany
+    @JoinColumn(name = "anket_id")
+    private List<Soru> sorular;
+
+    // Cevaplar
+    @OneToMany
+    @JoinColumn(name = "anket_id")
+    private List<Cevap> cevaplar;
+
+    // Getters and Setters
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public List<Soru> getSorular() {
+        return sorular;
+    }
+
+    public void setSorular(List<Soru> sorular) {
+        this.sorular = sorular;
+    }
+
+    public List<Cevap> getCevaplar() {
+        return cevaplar;
+    }
+
+    public void setCevaplar(List<Cevap> cevaplar) {
+        this.cevaplar = cevaplar;
+    }
+}

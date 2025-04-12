@@ -1,0 +1,27 @@
+package com.example.anketv2.business.concretes;
+
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+import com.example.anketv2.business.abstracts.AnketService;
+import com.example.anketv2.entities.abstracts.Soru;
+import com.example.anketv2.entities.concretes.Anket;
+
+@Service
+public class AnketManager implements AnketService {
+
+    @Override
+    public void addQuestionToSurvey(Anket anket, Soru soru) {
+        if (anket.getSorus() != null) {
+            anket.getSorus().add(soru);
+        } else {
+            throw new IllegalStateException("Anket'in soru listesi mevcut değil!");
+        }
+    }
+
+    @Override
+    public List<Soru> getAllQuestions(Anket anket) {
+        return anket.getSorus();
+    }
+}

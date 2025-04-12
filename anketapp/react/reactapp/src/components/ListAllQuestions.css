@@ -1,0 +1,73 @@
+.dashboard-container {
+    display: flex;
+}
+
+.content {
+    width: 900px; /* Sabit genişlik */
+    height: 900px; /* Yüksekliği artırdık */
+    padding: 20px;
+    background-color: #f9f9f9;
+    overflow-y: auto; /* İçerik taşarsa kaydırılabilir */
+    flex-shrink: 0; /* Sidebar'dan sonra genişlememesi için */
+}
+.content2 {
+  width: 900px; /* Sabit genişlik */
+  height: 900px; /* Yüksekliği artırdık */
+  padding: 20px;
+  background-color: #f9f9f9;
+  flex-shrink: 0; /* Sidebar'dan sonra genişlememesi için */
+  margin: auto;
+}
+
+.list {
+    list-style-type: none; /* Liste işaretlerini kaldır */
+    padding: 0; /* Varsayılan padding'i kaldır */
+}
+
+.list-item {
+    margin-bottom: 20px; /* Her soru arasında boşluk */
+}
+
+.sub-list {
+    margin-top: 5px; /* Seçenekleri soru metninden biraz aşağıya kaydırır */
+    margin-left: 20px; /* Seçenekleri biraz içeri kaydırır */
+}
+
+.sub-list li {
+    list-style-type: circle; /* Seçenekler için dairesel işaret */
+}
+.options-container {
+    margin-top: 5px; /* Üstten boşluk bırak */
+  }
+  
+  .options-row {
+    display: flex; /* Flexbox kullanarak yan yana diz */
+    gap: 10px; /* Seçenekler arasında boşluk bırak */
+  }
+  
+  .option {
+    display: inline-block;
+    padding: 10px;
+    margin: 5px; /* Seçenekler arasında boşluk bırakır */
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    font-size: 14px;
+  }
+  .question-text {
+    font-weight: bold; /* Soru metnini kalın yap */
+    margin-bottom: 5px; /* Sorunun altına boşluk bırak */
+  }
+
+  
+  
+  
+  
+
+p {
+    margin: 0; /* Paragraf margin'ini sıfırla */
+    line-height: 1.5; /* Satır yüksekliğini ayarla */
+}
+
+.scroll-container {
+    max-height: 800px;
+  }

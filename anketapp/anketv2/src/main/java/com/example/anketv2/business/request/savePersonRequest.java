@@ -1,0 +1,17 @@
+package com.example.anketv2.business.request;
+
+import com.example.anketv2.entities.abstracts.UserType;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public class savePersonRequest {
+	private String name;
+	private String Password;
+	private UserType userType;
+
+}

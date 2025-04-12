@@ -1,0 +1,8 @@
+package com.example.anketv2.entities.abstracts;
+
+public abstract class Soru {
+
+	private String Soru;
+	
+
+}

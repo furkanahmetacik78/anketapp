@@ -1,0 +1,17 @@
+package com.example.anketv2.entities.abstracts;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Inheritance;
+import jakarta.persistence.InheritanceType;
+
+@Entity
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS) // Veya SINGLE_TABLE/ JOINED
+public abstract class Soru {
+    @Id
+    private Integer id;
+
+    private String soruMetni;
+
+    // Getter ve Setter
+}

@@ -1,0 +1,35 @@
+package com.example.anketv2.entities.concretes;
+
+import java.util.List;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.SequenceGenerator;
+import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+
+@Entity
+@Table(name = "yazmaliSoru")
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@SequenceGenerator(name = "question_seq", sequenceName = "question_id_seq", allocationSize = 1)
+public class YazmaliSoru implements com.example.anketv2.entities.abstracts.Soru{
+	@Id
+	@Column(name = "id")
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "question_seq")
+	private Integer id;
+	@Column(name = "Soru")
+	private String Soru;
+	
+	@OneToMany(mappedBy = "yazmaliSoru")
+	List<YazmaliCevap> yazmaliCevaps;
+
+}

@@ -1,0 +1,45 @@
+package com.example.anketv2.business.concretes;
+
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+import com.example.anketv2.business.abstracts.AnketService;
+import com.example.anketv2.business.request.SaveAnketRequest;
+import com.example.anketv2.business.response.GetAnketResponse;
+import com.example.anketv2.entities.abstracts.Soru;
+import com.example.anketv2.entities.concretes.Anket;
+import com.example.anketv2.repositories.AnketRepository;
+import com.example.anketv2.repositories.SoruRepository;
+
+@Service
+public class AnketManager implements AnketService {
+
+    private final SoruRepository soruRepository;
+    private final AnketRepository anketRepository;
+
+    public AnketManager(SoruRepository soruRepository, AnketRepository anketRepository) {
+        this.soruRepository = soruRepository;
+        this.anketRepository = anketRepository;
+    }
+
+    @Override
+    public List<Soru> getAllSorular() {
+        return soruRepository.findAll();
+    }
+
+    @Override
+    public void createAnket(SaveAnketRequest request) {
+        Anket anket = new Anket();
+        anket.setSorular(request.getSorular());
+        anketRepository.save(anket);
+    }
+
+    @Override
+    public GetAnketResponse getAnketById(Integer anketId) {
+        Anket anket = anketRepository.findById(anketId).orElseThrow(() -> new RuntimeException("Anket bulunamadı"));
+        GetAnketResponse response = new GetAnketResponse();
+        response.setSorular(anket.getSorular());
+        return response;
+    }
+}

@@ -1,0 +1,10 @@
+package com.example.anketv2.controller.concretes;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@RequestMapping("/api/anket")
+public class AnketController {
+
+}

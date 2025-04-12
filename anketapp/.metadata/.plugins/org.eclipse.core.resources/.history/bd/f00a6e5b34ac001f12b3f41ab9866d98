@@ -1,0 +1,5 @@
+package com.example.anketv2.core.utilities.mappers;
+
+public interface ModelMapperService {
+
+}

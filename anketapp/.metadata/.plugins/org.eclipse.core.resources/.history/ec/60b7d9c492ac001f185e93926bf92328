@@ -1,0 +1,63 @@
+package com.example.anketv2.business.concretes;
+import java.util.List;
+import java.util.stream.Collectors;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.example.anketv2.business.abstracts.PersonService;
+import com.example.anketv2.business.request.savePersonRequest;
+import com.example.anketv2.business.response.GetallPersonResponse;
+import com.example.anketv2.core.utilities.mappers.ModelMapperService;
+import com.example.anketv2.entities.concretes.Person;
+import com.example.anketv2.repository.PersonRepository;
+
+@Service
+public class PersonManager implements PersonService {
+	@Autowired
+	private ModelMapperService modelMapperService;
+	@Autowired
+	private PersonRepository personRepository;
+	@Override
+	public Person savePerson(savePersonRequest savePersonResponse) {
+		
+		Person person = modelMapperService.forRequest().map(savePersonResponse, Person.class);
+		person.setName(savePersonResponse.getName());
+		person.setPassword(savePersonResponse.getPassword());
+		person.setUserType(savePersonResponse.getUserType());
+				
+		return personRepository.save(person);
+	}
+	
+//	List<Model> models = modelrepositery.findAll();
+//	
+//	List<GetAllModelResponse> modelResponses = models.stream()
+//			.map(model -> this.modelMapperService.forResponse()
+//					.map(model, GetAllModelResponse.class)).collect(Collectors.toList());
+	
+	
+	@Override
+	public List<GetallPersonResponse> getallPersons() {
+		List<Person> persons = personRepository.findAll();
+		List<GetallPersonResponse> getallPersonResponses = persons.stream()
+				.map(person ->this.modelMapperService.forResponse() 
+						.map(person, GetallPersonResponse.class)).collect(Collectors.toList());
+		return getallPersonResponses;
+	}
+
+	@Override
+	public  PersonDogrula(String name, String Password) {
+		List<Person> persons = personRepository.findAll();
+		for (Person person : persons) {
+			if(person.getName().equals(name)&& person.getPassword().equals(Password)) {
+				return person;
+		}
+			else {
+				System.out.println("olmadı");
+			}
+	}
+
+
+	}
+
+}

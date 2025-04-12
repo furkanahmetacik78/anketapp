@@ -1,0 +1,8 @@
+package com.example.anketv2.controller;
+
+import com.example.anketv2.entities.Person;
+
+public interface PersonController {
+	public Person savePerson(Person person);
+
+}

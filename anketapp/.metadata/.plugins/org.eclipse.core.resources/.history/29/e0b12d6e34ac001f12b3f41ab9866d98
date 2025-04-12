@@ -1,0 +1,19 @@
+package com.example.anketv2.core.utilities.mappers;
+
+import org.modelmapper.ModelMapper;
+
+public class ModelMapperManager implements ModelMapperService {
+
+	@Override
+	public ModelMapper forRequest() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ModelMapper forResponse() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

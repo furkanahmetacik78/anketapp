@@ -1,0 +1,16 @@
+package com.example.anketv2.view;
+
+import javax.swing.JPanel;
+
+public class gold extends JPanel {
+
+	private static final long serialVersionUID = 1L;
+
+	/**
+	 * Create the panel.
+	 */
+	public gold() {
+
+	}
+
+}

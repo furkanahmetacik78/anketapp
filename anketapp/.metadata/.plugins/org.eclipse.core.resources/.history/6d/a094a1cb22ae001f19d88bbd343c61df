@@ -1,0 +1,8 @@
+package com.example.anketv2.business.abstracts;
+
+public interface AnketService {
+	public void GetallAnketSorulari();
+	public Soru saveAnketSorusu();
+	
+
+}

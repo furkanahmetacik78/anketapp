@@ -1,0 +1,28 @@
+package com.example.anketv2.entities.concretes;
+
+import com.example.anketv2.entities.abstracts.Soru;
+import com.fasterxml.jackson.annotation.JsonTypeName;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Entity
+@Table(name = "coktanSecmeliSoru")
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@JsonTypeName("CoktanSecmeliSoru")
+public class ÇoktanSeçmeliSoru extends Soru{
+	@Column(name = "opt1")
+	private String opt1;
+	@Column(name = "opt2")
+	private String opt2;
+	@Column(name = "opt3")
+	private String opt3;
+	@Column(name = "opt4")
+	private String opt4;
+}

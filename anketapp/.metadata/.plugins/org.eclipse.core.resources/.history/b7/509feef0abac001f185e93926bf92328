@@ -1,0 +1,57 @@
+package com.example.anketv2.business.concretes;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.example.anketv2.business.abstracts.SoruService;
+import com.example.anketv2.business.request.saveÇoktanSeçmeliSoruRequest;
+import com.example.anketv2.business.response.GetallÇoktanSeçmeliSoruResponse;
+import com.example.anketv2.core.utilities.mappers.ModelMapperService;
+import com.example.anketv2.entities.concretes.ÇoktanSeçmeliSoru;
+import com.example.anketv2.repository.ÇoktanSeçmeliSoruRepository;
+
+public class SoruManager implements SoruService {
+	@Autowired
+	private ModelMapperService modelMapperService;
+	@Autowired
+	private ÇoktanSeçmeliSoruRepository çoktanSeçmeliSoruRepository;
+
+	@Override
+	public ÇoktanSeçmeliSoru saveSeçmeliSoru(saveÇoktanSeçmeliSoruRequest saveÇoktanSeçmeliSoruRequest) {
+		ÇoktanSeçmeliSoru çoktanSeçmeliSoru = modelMapperService.forRequest().map(saveÇoktanSeçmeliSoruRequest, ÇoktanSeçmeliSoru.class);
+		çoktanSeçmeliSoru.setSoru(saveÇoktanSeçmeliSoruRequest.getSoru());
+		çoktanSeçmeliSoru.setOpt1(saveÇoktanSeçmeliSoruRequest.getOpt1());
+		çoktanSeçmeliSoru.setOpt2(saveÇoktanSeçmeliSoruRequest.getOpt2());
+		çoktanSeçmeliSoru.setOpt3(saveÇoktanSeçmeliSoruRequest.getOpt3());
+		çoktanSeçmeliSoru.setOpt4(saveÇoktanSeçmeliSoruRequest.getOpt4());
+		return null;
+	}
+	
+//	public Person savePerson(savePersonRequest savePersonResponse) {
+//		
+//		Person person = modelMapperService.forRequest().map(savePersonResponse, Person.class);
+//		person.setName(savePersonResponse.getName());
+//		person.setPassword(savePersonResponse.getPassword());
+//		person.setUserType(savePersonResponse.getUserType());
+//				
+//		return personRepository.save(person);
+//	}
+//	
+//	
+//	@Override
+//	public List<GetallPersonResponse> getallPersons() {
+//		List<Person> persons = personRepository.findAll();
+//		List<GetallPersonResponse> getallPersonResponses = persons.stream()
+//				.map(person ->this.modelMapperService.forResponse() 
+//						.map(person, GetallPersonResponse.class)).collect(Collectors.toList());
+//		return getallPersonResponses;
+//	}
+
+	@Override
+	public List<GetallÇoktanSeçmeliSoruResponse> getallÇoktanSeçmeliSoruResponses() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

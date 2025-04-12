@@ -1,0 +1,169 @@
+/* Tüm sayfa düzenini kapsayan ana kapsayıcı */
+.dashboard-container {
+    display: flex;
+    flex-direction: row;
+    height: 100vh; /* Tüm ekran yüksekliğini kaplar */
+    font-family: Arial, sans-serif;
+    
+  }
+  
+  /* İçerik alanı */
+  .content {
+    width: 750px; /* Sabit genişlik */
+  padding: 20px;
+  background-color: #f9f9f9;
+  overflow-y: auto; /* İçerik taşarsa kaydırılabilir */
+  flex-shrink: 0; /* Sidebar'dan sonra genişlememesi için */
+  }
+  
+  /* Sayfa başlığı */
+  h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  /* Soruları içeren liste kutusu */
+  .scroll-container {
+    max-height: 200px;
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #fff;
+  }
+  
+  /* Soru listesi stili */
+  .scroll-container ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  /* Her bir liste öğesi */
+  .scroll-container li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 16px;
+  }
+  
+  /* Checkbox için stiller */
+  .scroll-container li input[type="checkbox"] {
+    margin-right: 10px;
+  }
+  
+  /* Soru metni */
+  .question-text {
+    max-width: 850px;
+    word-wrap: break-word;
+    white-space: normal;
+    overflow: hidden;
+    display: inline-block;
+    color: #555;
+  }
+  
+  /* Anket adı için giriş kutusu */
+  .input-style {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 20px;
+  }
+
+  .question-type-select {
+    width: 100%; /* Genişliği tam yap */
+    padding: 12px; /* İçerik için boşluk ekle */
+    font-size: 16px; /* Yazı boyutunu ayarla */
+    border-radius: 5px; /* Kenar yuvarlama */
+    border: 1px solid #ddd; /* Kenar rengi */
+    margin-bottom: 20px; /* Alt boşluk ekle */
+  }
+  
+  
+  /* Butonlar */
+  .button-style {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .button-style:hover {
+    background-color: #45a049; /* Hover efekti */
+  }
+  
+  /* Sidebar için genel stiller */
+  .sidebar {
+    width: 250px;
+    background-color: #343A40;
+    color: white;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .sidebar h2 {
+    color: white;
+    margin-bottom: 20px;
+  }
+  
+  .sidebar ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .sidebar ul li {
+    margin-bottom: 10px;
+  }
+  
+  .sidebar ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+  }
+  
+  .sidebar ul li a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Responsive tasarım */
+  @media (max-width: 768px) {
+    .dashboard-container {
+      flex-direction: column;
+    }
+  
+    .sidebar {
+      width: 100%;
+    }
+  
+    .content {
+      padding: 10px;
+    }
+    
+    .small-button {
+      background-color: #4CAF50; /* Arka plan rengi */
+      color: white; /* Yazı rengi */
+      padding: 5px 10px; /* Küçültülmüş padding */
+      font-size: 14px; /* Küçültülmüş font boyutu */
+      border: none; /* Kenar yok */
+      border-radius: 5px; /* Kenar yuvarlama */
+      cursor: pointer; /* İmleç değişimi */
+      margin: 5px; /* Kenar boşluğu */
+    }
+    
+    @media (max-width: 768px) {
+      .small-button {
+        width: 50px; /* Butonun genişliği */
+      }
+    }
+    
+  }
+  

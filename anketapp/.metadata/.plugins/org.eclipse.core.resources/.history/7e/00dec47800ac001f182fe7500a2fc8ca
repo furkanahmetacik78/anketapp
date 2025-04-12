@@ -1,0 +1,22 @@
+package com.example.anketv2.controller.concretes;
+
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.example.anketv2.controller.abstracts.PersonController;
+import com.example.anketv2.entities.Person;
+
+@RestController
+@RequestMapping("/api/person")
+public class PersonControllerManager implements PersonController{
+
+	@Override
+	@PostMapping(path = ("/save"))
+	public Person savePerson(@RequestBody Person person) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

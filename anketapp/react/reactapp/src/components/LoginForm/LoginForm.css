@@ -1,0 +1,97 @@
+/* LoginForm.css */
+.login-page {
+  display: flex;
+  height: 100vh;
+  margin: 0;
+}
+
+.left-panel {
+  flex: 1;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.left-panel h1 {
+  font-size: 3rem;
+  color: #333;
+  text-align: center;
+}
+
+.right-panel {
+  flex: 1;
+  display: flex;
+  justify-content: center; /* Yatay ortalama */
+  align-items: center;    /* Dikey ortalama */
+  background-color: #fff;
+  padding: 20px;
+}
+
+.login-container {
+  width: 300px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: #fafafa;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  color: #444;
+}
+
+.input-group {
+  margin-bottom: 15px;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #555;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  font-size: 1rem;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.signup-button {
+  background-color: #28a745;
+}
+
+.signup-button:hover {
+  background-color: #1c7c31;
+}
+
+.error-message {
+  color: red;
+  font-size: 0.9rem;
+  margin-top: -5px;
+  margin-bottom: 10px;
+}

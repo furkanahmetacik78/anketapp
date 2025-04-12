@@ -1,0 +1,38 @@
+package com.example.anketv2.controller.concretes;
+
+public class YazmaliSoruController {
+	package com.example.anketv2.controller.concretes;
+
+	import java.util.List;
+
+	import org.springframework.beans.factory.annotation.Autowired;
+	import org.springframework.web.bind.annotation.GetMapping;
+	import org.springframework.web.bind.annotation.PostMapping;
+	import org.springframework.web.bind.annotation.RequestBody;
+	import org.springframework.web.bind.annotation.RequestMapping;
+	import org.springframework.web.bind.annotation.RestController;
+
+	import com.example.anketv2.business.abstracts.SoruService;
+	import com.example.anketv2.business.request.saveYazmaliSoruRequest;
+	import com.example.anketv2.business.response.GetallYazmaliSoruResponse;
+	import com.example.anketv2.entities.concretes.YazmaliSoru;
+
+	@RestController
+	@RequestMapping("/api/yazmaliSoru")
+	public class YazmaliSoruController {
+	    @Autowired
+	    private SoruService soruService;
+
+	    @PostMapping(path = ("/save"))
+	    public YazmaliSoru saveYazmaliSoru(@RequestBody saveYazmaliSoruRequest saveYazmaliSoruRequest) {
+	        return soruService.saveYazmaliSoru(saveYazmaliSoruRequest);
+	    }
+
+	    @GetMapping(path = "/getall")
+	    public List<GetallYazmaliSoruResponse> getallYazmaliSoruResponses() {
+	        return soruService.getallYazmaliSoruResponses();
+	    }
+	}
+
+
+}

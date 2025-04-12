@@ -1,0 +1,9 @@
+package com.example.anketv2.entities.abstracts;
+
+import jakarta.persistence.MappedSuperclass;
+
+@MappedSuperclass
+public abstract class Soru {
+	private String Sorumetni;
+
+}

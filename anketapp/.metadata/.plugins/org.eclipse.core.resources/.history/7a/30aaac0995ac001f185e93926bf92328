@@ -1,0 +1,111 @@
+package com.example.anketv2.view;
+
+import java.awt.EventQueue;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.List;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
+import javax.swing.border.EmptyBorder;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.example.anketv2.business.abstracts.PersonService;
+import com.example.anketv2.business.response.GetallPersonResponse;
+import com.example.anketv2.entities.concretes.Person;
+import com.example.anketv2.repository.PersonRepository;
+
+public class Login extends JFrame {
+
+	private static final long serialVersionUID = 1L;
+	private JPanel contentPane;
+	private JTextField textFieldUsername;
+	private JPasswordField passwordField;
+//	@Autowired
+//	private PersonRepository personRepository;
+	@Autowired
+	private	PersonService personService ;
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Login frame = new Login();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public Login() {
+		setTitle("Giriş Ekranı");
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 450, 300);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+
+		JLabel lblUsername = new JLabel("Kullanıcı Adı:");
+		lblUsername.setBounds(50, 50, 100, 25);
+		contentPane.add(lblUsername);
+
+		textFieldUsername = new JTextField();
+		textFieldUsername.setBounds(160, 50, 200, 25);
+		contentPane.add(textFieldUsername);
+		textFieldUsername.setColumns(10);
+
+		JLabel lblPassword = new JLabel("Şifre:");
+		lblPassword.setBounds(50, 100, 100, 25);
+		contentPane.add(lblPassword);
+
+		passwordField = new JPasswordField();
+		passwordField.setBounds(160, 100, 200, 25);
+		contentPane.add(passwordField);
+
+		JButton btnLogin = new JButton("Giriş");
+		btnLogin.setBounds(160, 150, 200, 30);
+		contentPane.add(btnLogin);
+
+		btnLogin.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String username = textFieldUsername.getText();
+				String password = new String(passwordField.getPassword());
+				personService.persons();
+
+//				// Örnek bir doğrulama: Kullanıcı adı ve şifreyi kontrol edebilirsiniz.
+//				if (!username.isEmpty() && !password.isEmpty()) {
+//					for (Person getallPersonResponse : persons) {
+//						if (username == getallPersonResponse.getName() && password == getallPersonResponse.getPassword()) {
+//							if (getallPersonResponse.getUserType().toString() == "Admin") {
+//								JOptionPane.showMessageDialog(Login.this, "Kullanıcı adı ve şifre doğru Admin!", "Giriş", JOptionPane.ERROR_MESSAGE);
+//							}else if (getallPersonResponse.getUserType().toString() == "User") {
+//								JOptionPane.showMessageDialog(Login.this, "Kullanıcı adı ve şifre doğru User!", "Giriş", JOptionPane.ERROR_MESSAGE);
+//							}
+//							
+//						}
+//						else {
+//							JOptionPane.showMessageDialog(Login.this, "Kullanıcı adı ve şifre hatalı!", "Hata", JOptionPane.ERROR_MESSAGE);
+//							
+//						}
+//					}
+//				} else {
+//					JOptionPane.showMessageDialog(Login.this, "Kullanıcı adı ve şifre boş olamaz!", "Hata", JOptionPane.ERROR_MESSAGE);
+//				}
+			}
+		});
+	}
+}

@@ -1,0 +1,52 @@
+package com.example.anketv2.entities.concretes;
+
+import java.util.Set;
+
+import com.example.anketv2.entities.abstracts.Soru;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.ManyToMany;
+import jakarta.persistence.Table;
+import lombok.Data;
+
+@Entity
+public Anket saveAnket(saveAnketRequest request) {
+    // Yeni bir anket oluştur
+    Anket anket = new Anket();
+    anket.setAnketAdi(request.getAnketAdi());
+
+    // Soru ID'lerini al ve veritabanından ilgili soruları çek
+    Set<Long> soruIds = request.getSoruIds(); // Soru ID'lerini alıyoruz
+
+    // Long ID'lerini Integer'a dönüştür
+    Set<Integer> soruIdsInteger = soruIds.stream()
+                                          .map(Long::intValue)  // Long'dan Integer'a dönüşüm
+                                          .collect(Collectors.toSet());
+
+    // Integer ID'leri ile soruları alıyoruz
+    List<Soru> sorularList = soruRepository.findAllById(soruIdsInteger);  // List dönecek
+
+    // List'i Set'e dönüştür
+    Set<Soru> sorular = new HashSet<>(sorularList);
+
+    // Soruları ankete ekle, burada sadece soruların ID'leri ilişkilendirilecek
+    anket.setSorular(sorular);
+
+    // Anketi veritabanına kaydet
+    return anketRepository.save(anket);
+}
+@Table(name = "anket")
+public class Anket {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+    
+    private String anketAdi;
+    
+    @ManyToMany(mappedBy = "anketler")
+    private Set<Soru> sorular;
+    
+}

@@ -1,0 +1,19 @@
+package com.example.anketv2.business.concretes;
+
+import com.example.anketv2.business.abstracts.AnketService;
+
+public class AnketManager implements AnketService{
+
+	@Override
+	public void GetallAnketSorulari() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void saveAnketSorusu() {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

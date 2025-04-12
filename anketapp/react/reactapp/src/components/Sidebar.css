@@ -1,0 +1,12 @@
+.sidebar-button {
+    background-color: var(--color-button-sidebar); /* Varsayılan arka plan rengi */
+    color: #FFFFFF; /* Beyaz yazı rengi */
+    border: none; /* Kenarlık yok */
+    padding: 10px 15px; /* İç boşluk */
+    cursor: pointer; /* İmleç değişimi */
+    transition: background-color 0.3s ease; /* Geçiş efekti */
+}
+
+.sidebar-button:hover {
+    background-color: var(--color-orange); /* Hover durumunda arka plan rengi */
+}

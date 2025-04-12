@@ -1,0 +1,175 @@
+/* Genel Stil Ayarları */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f4f4f4;
+    color: #333;
+  }
+  
+  .dashboard-container {
+    display: flex;
+    height: 100vh;
+  }
+  
+  /* Sidebar Stili */
+  .sidebar {
+    width: 250px;
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    height: 200vh;
+  }
+  
+  .sidebar h2 {
+    margin: 0 0 20px;
+    text-align: center;
+    font-size: 20px;
+  }
+  
+  .sidebar-button {
+    background-color: #34495e;
+    border: none;
+    padding: 10px 15px;
+    color: #ecf0f1;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: left;
+    font-size: 14px;
+    transition: background-color 0.3s;
+  }
+  
+  .sidebar-button:hover {
+    background-color: var(--color-orange); /* Hover durumunda arka plan rengi */
+}
+  
+  .sidebar a {
+    text-decoration: none;
+  }
+  
+  /* İçerik Alanı Stili */
+
+  
+  .content h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .scroll-container {
+    max-height: 800px;
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: #fff;
+  }
+  .actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  
+  .list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .list-item {
+    padding: 5px 0;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .survey-button {
+    display: block;
+    min-width: 500px;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s;
+  }
+  
+  .survey-button:hover {
+    background-color: #2980b9;
+  }
+  
+  /* Anket ve Soru Kartları Stili */
+  .survey-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .question-card {
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .question-title {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .option-list {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin-top: 10px;
+  }
+  
+  .option-item {
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+  
+  /* İndir Butonları Stili */
+  .download-button {
+    background-color: #27ae60;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-right: 10px;
+    transition: background-color 0.3s;
+  }
+  .download-button2 {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 10px 10px;
+    font-size: 0.9rem;
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 0;
+    cursor: pointer;
+    height: auto;
+    width: 20;
+  }
+  
+  .download-button2 img {
+    width: 26px;
+    height: 26px;
+  }
+  
+  .download-button2:hover {
+    background-color: #0056b3;
+  }
+  
+  .download-button:hover {
+    background-color: #2ecc71;
+  }
+  

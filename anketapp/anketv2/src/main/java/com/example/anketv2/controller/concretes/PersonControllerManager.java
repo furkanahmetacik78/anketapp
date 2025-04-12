@@ -1,0 +1,53 @@
+package com.example.anketv2.controller.concretes;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.example.anketv2.business.abstracts.PersonService;
+import com.example.anketv2.business.request.savePersonRequest;
+import com.example.anketv2.business.response.GetallPersonResponse;
+import com.example.anketv2.entities.concretes.Person;
+@CrossOrigin(origins = "http://localhost:3000")
+@RestController
+@RequestMapping("/api/person")
+public class PersonControllerManager{
+
+	@Autowired
+	private PersonService personService;
+
+	@PostMapping(path = ("/save"))
+	public Person savePerson(@RequestBody savePersonRequest savePersonRequest) {
+		return personService.savePerson(savePersonRequest);
+	}
+	
+	@GetMapping(path = "/getall")
+	public List<GetallPersonResponse> getallPersons() {
+		return personService.getallPersons();
+	}
+	
+	@PostMapping(path = ("/kullanici"))
+	public ResponseEntity<String> getByPerson(@RequestParam String name, @RequestParam String password) {
+        try {
+            String userType = personService.getByPerson(name, password); // Servis metodunu çağır
+            return ResponseEntity.ok(userType); // Yanıt olarak 'admin' ya da 'user' dön
+        } catch (RuntimeException e) {
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Kullanıcı adı veya şifre hatalı"); // Hata durumunda 401 dön
+        }
+    }
+	
+
+	
+	
+
+
+}

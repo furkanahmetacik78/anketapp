@@ -1,0 +1,41 @@
+package com.example.anketv2.entities.concretes;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Entity
+@Table(name = "cevap")
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public class Cevap {
+	@Id
+	@Column(name = "id")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer id;
+	
+	
+	@ManyToOne
+	@JoinColumn(name="booleanSoruId")
+	private BooleanSoru booleanSoru;
+	
+	@ManyToOne
+	@JoinColumn(name="çoktanSeçmeliSoruId")
+	private ÇoktanSeçmeliSoru çoktanSeçmeliSoru;
+	
+	@ManyToOne
+	@JoinColumn(name="yazmaliSoru")
+	private YazmaliSoru yazmaliSoru;
+
+	
+
+}

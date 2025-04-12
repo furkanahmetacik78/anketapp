@@ -1,0 +1,26 @@
+package com.example.anketv2.entities.concretes;
+
+import java.util.List;
+
+import com.example.anketv2.entities.abstracts.Soru;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+
+@Entity
+@Table(name = "yazmaliSoru")
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+//@SequenceGenerator(name = "question_seq", sequenceName = "question_id_seq", allocationSize = 1)
+public class YazmaliSoru extends Soru{
+
+	@OneToMany(mappedBy = "yazmaliSoru")
+	List<YazmaliCevap> yazmaliCevaps;
+
+}

@@ -1,0 +1,21 @@
+package com.example.anketv2.entities.concretes;
+
+import jakarta.persistence.*;
+
+@Entity
+public class AnketSorular {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+
+    @ManyToOne
+    @JoinColumn(name = "anket_id")
+    private Anket anket;
+
+    @ManyToOne
+    @JoinColumn(name = "soru_id")
+    private Soru soru;
+
+    // Getter ve Setter'lar
+}

@@ -1,0 +1,14 @@
+package com.example.anketv2.business.abstracts;
+
+import java.util.List;
+
+import com.example.anketv2.business.request.GetallPersonRequest;
+import com.example.anketv2.business.response.savePersonResponse;
+import com.example.anketv2.entities.concretes.Person;
+
+public interface PersonService {
+	public Person savePerson(savePersonResponse savePersonResponse);
+	public List<GetallPersonRequest> getallPersons();
+	
+
+}

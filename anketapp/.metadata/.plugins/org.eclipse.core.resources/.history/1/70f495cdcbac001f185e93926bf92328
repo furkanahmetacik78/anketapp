@@ -1,0 +1,15 @@
+package com.example.anketv2.entities.concretes;
+
+import java.util.List;
+
+public class Anket {
+	private List<BooleanSoru>booleanSorus;
+	private List<ÇoktanSeçmeliSoru>çoktanSeçmeliSorus;
+	private List<YazmaliSoru>yazmaliSorus;
+	
+	private String soru;
+	
+
+	
+
+}

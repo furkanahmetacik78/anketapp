@@ -1,0 +1,6 @@
+package com.example.anketv2.entities.concretes;
+
+public class Question {
+	
+
+}

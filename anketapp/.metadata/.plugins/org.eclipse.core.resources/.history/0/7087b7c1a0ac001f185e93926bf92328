@@ -1,0 +1,17 @@
+package com.example.anketv2.entities.concretes;
+
+import com.example.anketv2.entities.abstracts.Question;
+
+import jakarta.persistence.Column;
+
+public class ÇoktanSeçmeliSoru extends Question{
+	@Column(name = "opt1")
+	private String opt1;
+	@Column(name = "opt2")
+	private String opt2;
+	@Column(name = "opt3")
+	private String opt3;
+	@Column(name = "opt4")
+	private String opt4;
+
+}

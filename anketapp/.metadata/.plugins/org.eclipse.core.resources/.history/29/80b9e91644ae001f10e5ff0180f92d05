@@ -1,0 +1,11 @@
+package com.example.anketv2.business.concretes;
+
+import org.springframework.stereotype.Service;
+
+import com.example.anketv2.business.abstracts.AnketService;
+
+@Service
+public class AnketManager implements AnketService {
+
+
+}

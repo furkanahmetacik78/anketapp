@@ -1,0 +1,19 @@
+package com.example.anketv2.entities.concretes;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import com.example.anketv2.business.abstracts.SoruService;
+import com.example.anketv2.entities.abstracts.Soru;
+
+public class Anket {
+	private ArrayList<Soru> sorus = new ArrayList<>();
+	
+	
+	
+	
+	
+
+	
+
+}

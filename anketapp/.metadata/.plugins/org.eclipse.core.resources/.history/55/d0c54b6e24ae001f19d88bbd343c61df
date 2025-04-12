@@ -1,0 +1,5 @@
+package com.example.anketv2.controller.concretes;
+
+public class AnketController {
+
+}

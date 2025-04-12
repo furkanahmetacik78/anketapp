@@ -1,0 +1,51 @@
+package com.example.anketv2.view;
+
+import java.awt.EventQueue;
+import java.util.List;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.example.anketv2.business.abstracts.PersonService;
+import com.example.anketv2.business.response.GetallPersonResponse;
+
+public class sa extends JFrame {
+
+	private static final long serialVersionUID = 1L;
+	private JPanel contentPane;
+	@Autowired
+	private	PersonService personService;
+	List<GetallPersonResponse> getallPersonResponses = personService.getallPersons();
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					sa frame = new sa();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public sa() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 450, 300);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+
+		setContentPane(contentPane);
+	}
+
+}

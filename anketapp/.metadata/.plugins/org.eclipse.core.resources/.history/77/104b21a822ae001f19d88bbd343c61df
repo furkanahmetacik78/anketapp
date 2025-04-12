@@ -1,0 +1,31 @@
+package com.example.anketv2.business.concretes;
+
+import java.security.PrivateKey;
+import java.util.List;
+
+import com.example.anketv2.business.abstracts.AnketService;
+import com.example.anketv2.entities.abstracts.Soru;
+import com.example.anketv2.entities.concretes.BooleanSoru;
+import com.example.anketv2.entities.concretes.YazmaliSoru;
+import com.example.anketv2.entities.concretes.ÇoktanSeçmeliSoru;
+
+public class AnketManager implements AnketService{
+
+	@Override
+	public void GetallAnketSorulari() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void saveAnketSorusu(Soru soru) {
+		private List<BooleanSoru> booleanSorus;
+		private List<ÇoktanSeçmeliSoru> çoktanSeçmeliSorus;
+		private List<YazmaliSoru> yazmaliSorus;
+		
+		
+		
+		
+	}
+
+}

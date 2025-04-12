@@ -1,0 +1,42 @@
+package com.example.anketv2.controller.concretes;
+
+import com.example.anketv2.business.abstracts.AnketService;
+import com.example.anketv2.entities.concretes.Anket;
+import com.example.anketv2.entities.concretes.BooleanSoru;
+import com.example.anketv2.entities.concretes.ÇoktanSeçmeliSoru;
+import com.example.anketv2.entities.concretes.YazmaliSoru;
+import com.example.anketv2.controller.dtos.AnketRequest;
+import com.example.anketv2.controller.dtos.AnketResponse;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+@RestController
+@RequestMapping("/api/anket")
+public class AnketController {
+
+    private final AnketService anketService;
+
+    @Autowired
+    public AnketController(AnketService anketService) {
+        this.anketService = anketService;
+    }
+
+    // Anket oluşturma
+    @PostMapping("/create")
+    public AnketResponse createAnket(@RequestBody com.example.anketv2.business.request.AnketRequest request) {
+        List<BooleanSoru> booleanSorular = request.getBooleanSorular();
+        List<ÇoktanSeçmeliSoru> coktanSecmeliSorular = request.getCoktanSecmeliSorular();
+        List<YazmaliSoru> yazmaliSorular = request.getYazmaliSorular();
+
+        Anket anket = anketService.createAnket(booleanSorular, coktanSecmeliSorular, yazmaliSorular);
+        return new com.example.anketv2.business.response.AnketResponse(anket.getId(), "Anket başarıyla oluşturuldu");
+    }
+
+    // Tüm anketleri listeleme
+    @GetMapping("/all")
+    public List<Anket> getAllAnkets() {
+        return anketService.getAllAnkets();
+    }
+}

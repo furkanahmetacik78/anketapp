@@ -1,0 +1,15 @@
+package com.example.anketv2.controller.concretes;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.example.anketv2.business.abstracts.SoruService;
+
+@RestController
+@RequestMapping("/api/ÇoktanSeçmeliSoru")
+public class ÇoktanSeçmeliSoruControllers {
+	@Autowired
+	private SoruService soruService; 
+
+}

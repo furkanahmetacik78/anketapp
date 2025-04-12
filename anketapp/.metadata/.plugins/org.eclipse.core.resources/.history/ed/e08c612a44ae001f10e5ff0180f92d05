@@ -1,0 +1,42 @@
+package com.example.anketv2.business.concretes;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.example.anketv2.business.abstracts.AnketService;
+import com.example.anketv2.entities.concretes.Anket;
+import com.example.anketv2.entities.concretes.Soru;
+import com.example.anketv2.repository.AnketRepository;
+import com.example.anketv2.repository.SoruRepository;
+
+import java.util.List;
+
+@Service
+public class AnketManager implements AnketService {
+    private final AnketRepository anketRepository;
+    private final SoruRepository soruRepository;
+
+    @Autowired
+    public AnketManager(AnketRepository anketRepository, SoruRepository soruRepository) {
+        this.anketRepository = anketRepository;
+        this.soruRepository = soruRepository;
+    }
+
+    @Override
+    public Anket anketOlustur(List<Soru> sorular, String anketAdi) {
+        Anket anket = new Anket();
+        anket.setAnketAdi(anketAdi);
+        anket.setSorular(sorular);
+        return anketRepository.save(anket);
+    }
+
+    @Override
+    public List<Anket> getAnketById(Integer anketId) {
+        return anketRepository.findById(anketId);
+    }
+
+    @Override
+    public List<Soru> tumSorulariListele() {
+        return soruRepository.findAll();
+    }
+}

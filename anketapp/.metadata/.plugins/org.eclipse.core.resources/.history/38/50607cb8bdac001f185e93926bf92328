@@ -1,0 +1,16 @@
+package com.example.anketv2.entities.concretes;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Entity
+@Table(name = "cevap")
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public class YazmaliCevap {
+
+}

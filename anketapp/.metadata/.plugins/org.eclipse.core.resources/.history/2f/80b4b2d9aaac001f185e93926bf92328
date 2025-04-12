@@ -1,0 +1,24 @@
+package com.example.anketv2.business.concretes;
+
+import java.util.List;
+
+import com.example.anketv2.business.abstracts.SoruService;
+import com.example.anketv2.business.request.saveÇoktanSeçmeliSoruRequest;
+import com.example.anketv2.business.response.GetallÇoktanSeçmeliSoruResponse;
+import com.example.anketv2.entities.concretes.ÇoktanSeçmeliSoru;
+
+public class SoruManager implements SoruService {
+
+	@Override
+	public ÇoktanSeçmeliSoru saveSeçmeliSoru(saveÇoktanSeçmeliSoruRequest saveÇoktanSeçmeliSoruRequest) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<GetallÇoktanSeçmeliSoruResponse> getallÇoktanSeçmeliSoruResponses() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

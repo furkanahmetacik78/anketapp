@@ -1,0 +1,34 @@
+package com.example.anketv2.entities.concretes;
+
+import java.util.List;
+import java.util.Set;
+
+import com.example.anketv2.entities.abstracts.Soru;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.ManyToMany;
+import jakarta.persistence.Table;
+import lombok.Data;
+
+@Entity
+@Data
+@Table(name = "anket")
+public class Anket {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+    
+    private String anketAdi;
+    
+    @ManyToMany
+    @JoinTable(
+        name = "anket_soru",
+        joinColumns = @JoinColumn(name = "anket_id"),
+        inverseJoinColumns = @JoinColumn(name = "soru_id")
+    )
+    private Set<Soru> sorular;
+    
+}

@@ -1,0 +1,33 @@
+package com.example.anketv2.business.concretes;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.example.anketv2.business.abstracts.PersonService;
+import com.example.anketv2.business.request.GetallPersonRequest;
+import com.example.anketv2.business.response.savePersonResponse;
+import com.example.anketv2.entities.concretes.Person;
+import com.example.anketv2.repository.PersonRepository;
+
+@Service
+public class PersonManager implements PersonService {
+	
+	@Autowired
+	private PersonRepository personRepository;
+
+
+
+	@Override
+	public List<GetallPersonRequest> getallPersons() {
+		List<Person> persons = personRepository.findAll();
+		return persons;
+	}
+
+	@Override
+	public Person savePerson(savePersonResponse savePersonResponse) {
+		personRepository.save(person);
+		return null;
+	}
+
+}

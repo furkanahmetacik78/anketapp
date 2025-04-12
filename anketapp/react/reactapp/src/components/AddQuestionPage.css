@@ -1,0 +1,89 @@
+.add-question-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+  font-size: 2rem;
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.question-type-select {
+  width: 100%; /* Genişliği tam yap */
+  padding: 12px; /* İçerik için boşluk ekle */
+  font-size: 1rem; /* Yazı boyutunu ayarla */
+  border-radius: 4px; /* Kenar yuvarlama */
+  border: 1px solid #ddd; /* Kenar rengi */
+  margin-bottom: 20px; /* Alt boşluk ekle */
+}
+
+
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.question-type-button {
+  padding: 10px 20px;
+  border: 1px solid #007bff;
+  background-color: #fff;
+  color: #007bff;
+  font-size: 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.question-type-button.active,
+.question-type-button:hover {
+  background-color: #007bff;
+  color: white;
+}
+
+.form-container {
+  padding: 20px;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+form label {
+  display: block;
+  font-size: 1rem;
+  color: #444;
+  margin-bottom: 5px;
+}
+
+form input {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-bottom: 15px;
+}
+
+form button {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  color: white;
+  background-color: #007bff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: #0056b3;
+}

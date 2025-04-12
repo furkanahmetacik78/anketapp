@@ -1,0 +1,16 @@
+package com.example.anketv2.business.abstracts;
+
+import com.example.anketv2.business.concretes.SaveAnketRequest;
+import com.example.anketv2.entities.abstracts.Soru;
+import com.example.anketv2.entities.concretes.Anket;
+
+import java.util.List;
+
+public interface AnketService {
+	public List<Soru> getSorularByIds(List<Integer> soruIds);
+    List<Anket> getAnketById(Integer anketId);
+    List<Soru> tumSorulariListele();
+    List<String> getAllAnketNames();  
+    Anket getAnketByName(String anketAdi); 
+    public Anket saveAnket(SaveAnketRequest request);
+}
